@@ -1,8 +1,15 @@
+#Mes functions
 def incToFeet(inc):
     inc = float(inc)
-    ft = inc /12.0
-    return round(ft,2)
+    feet = inc /12.0
+    return round(feet,2)
 
+def feetToInc(feet):
+    feet = float(feet)
+    inc = feet * 12.0
+    return round(inc,2)
+
+#Temp functions
 def fahToCel(fah):
     fah = float(fah)
     cel = (fah - 32) * (5/9)
@@ -38,7 +45,12 @@ while (count < 1):
             print("")
             
         #Feet to inches
-            
+        elif(mesChoice == str(2)):
+           feet = input("Enter the number of feet: ")
+           inches = feetToInc(feet)
+           print(str(feet) + " feet is equal to " + str(inches) + " inches")
+           print("")
+           
             
     #Temperature mode
     elif(mode == "temp"):
@@ -59,11 +71,11 @@ while (count < 1):
         elif(tempChoice == str(2)):
             value = input("Enter celsius value: ")
             fahren = celToFah(value)
-            print(str(value) + " celsius is equal to " + str(fahren) + " fshrenheit")
+            print(str(value) + " celsius is equal to " + str(fahren) + " fahrenheit")
             print("")
             
         #Exit program
         elif(tempChoice == "X" | tempChoice == "x"): 
             count = count + 1
-    elif(mode == "X" | mode == "x"):
+    elif(mode == "X"):
         count = count + 1
